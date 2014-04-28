@@ -11,12 +11,35 @@ server.use(restify.bodyParser());
 
 function isValidActionsByEntityQuery(parameters) {
     var valid = typeof parameters !== 'undefined'
-        && (parameters.hasOwnProperty('og') || parameters.hasOwnProperty('sorg'));
+        && parameters.hasOwnProperty('fb_url')
+        && typeof parameters['fb_url'] === 'string';
     return valid;
 }
 
 server.get('/getActionsByEntity', function (req, res, next) {
-    res.send(req.params);
+    if (isValidActionsByEntityQuery(req.params)) {
+        res.send(req.params);
+    } else {
+        res.send(400);
+    }
+
+    return next();
+});
+
+function isValidActionDetailsQuery(parameters) {
+    var valid = typeof parameters !== 'undefined'
+        && parameters.hasOwnProperty('actionType')
+        && typeof parameters['actionType'] === 'string';
+    return valid;
+}
+
+server.get('/getActionDetails', function (req, res, next) {
+    if (isValidActionDetailsQuery(req.params)) {
+        res.send(req.params);
+    } else {
+        res.send(400);
+    }
+
     return next();
 });
 

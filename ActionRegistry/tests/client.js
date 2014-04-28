@@ -14,3 +14,8 @@ client.get('/getActionsByEntity', function (err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
 });
+
+client.get('/getActionDetails', function (err, req, res, obj) {
+    assert.ifError(err);
+    debug('Server returned: %j', obj);
+});
