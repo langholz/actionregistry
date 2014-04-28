@@ -10,12 +10,12 @@ var client = restify.createJsonClient({
     version: '~0.0.1'
 });
 
-client.get('/getActionsByEntity', function (err, req, res, obj) {
+client.get('/getActionsByEntity?fb_url=/ea', function (err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
 });
 
-client.get('/getActionDetails', function (err, req, res, obj) {
+client.get('/getActionDetails?actionType=type', function (err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
 });
