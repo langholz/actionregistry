@@ -1,4 +1,4 @@
-http://actionregistry.com/getActionsByEntity?fb_url="/TheWestinSeattleHotel"
+http://actionregistry.com/getActionbyEntity?fb_url="http://facebook.com/TheWestinSeattleHotel"
 
 return
 
@@ -11,38 +11,56 @@ return
 	Share: [{}, {}]
 }
 
-http://actionregistry.com/getActionsByEntity?fb_url=/pages/Seattle-Washington/110843418940484
-
+http://actionregistry.com/getActionbyEntity?fb_url="http://facebook.com/pages/Seattle-Washington/110843418940484"
 
 return 
 
 {
-	BookFlight: [{}, {}],
-	BookHotel: [{}, {}],
-	GetDirections: [{}, {}],
-	Like: [{}],
-	Share: [{}, {}]
+	BookFlight: { 
+		"Kayak": {target: "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%"},
+		"Expedia": {target: ""}
+	}
+	GetDirections: { 
+		"GoogleMaps": {target: "https://maps.google.com/maps?daddr=%daddr%&saddr=%saddr%"},
+		"BingMaps": {target: ""}
+	}
+		
+	BookHotel: {},
+	Like: {},
+	Share: {}
 }
 
 
+http://actionregistry.com/getActionDetails?actionType="BookFlight"
 
-http://actionregistry.com/getActionDetails?actionType=BookFlight
-
-{
+{ 
+	friendlyName: "Book a Flight", 
+	providers: [ 
+		"Kayak": { friendlyName: "Kayak",params: [origin:{friendlyName: "Origin"}, destination: {friendlyName: "Destination"}, depart:{friendlyName: "Depart Date"}, return:{friendlyName: "Return Date"}]},
+		"Expedia": { friendlyName: "Expedia" }
+	]
 }
 
 
+http://actionregistry.com/getActionDetails?actionType="GetDirections"
+
+{ 
+	friendlyName: "Get Directions", 
+	providers: [ 
+		"GoogleMaps": {friendlyName: "Google Maps",params: [daddr: {friendlyName: "Destination Address"}, saddr: {friendlyName: "Starting Address"}]},
+		"BingMaps": {friendlyName: "Bing Maps" }
+	]
+}
 
 
-canonical examples
+Google Directions API - https://maps.google.com/maps?daddr=11039+Downey+Avenue,+Paramount,+CA
+flight -- http://www.kayak.com/flights/SFO-SEA/2014-04-30/2014-05-22
 
 
-https://www.facebook.com/pages/Seattle-Washington/110843418940484
-https://www.facebook.com/TheWestinSeattleHotel
+Mapping Cities to Airports
 
 
-
-
-
-
+Seattle - SEA
+San Francisco - SFO
+Vancouver, BC - YVR
 
