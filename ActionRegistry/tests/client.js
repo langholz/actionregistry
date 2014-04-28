@@ -10,6 +10,12 @@ var client = restify.createJsonClient({
     version: '~0.0.1'
 });
 
+var cases = {
+  "/getActionsByEntity?fb_url=\"/pages/Seattle-Washington/110843418940484\"": {
+
+  }
+};
+
 client.get('/getActionsByEntity', function (err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
