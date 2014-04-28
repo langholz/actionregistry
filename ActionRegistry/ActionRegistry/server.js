@@ -1,6 +1,18 @@
-﻿var http = require('http');
+﻿var restify = require('restify');
 var port = process.env.port || 1337;
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World 2\n');
-}).listen(port);
+var server = restify.createServer({
+    name: 'actionregistry',
+    version: '0.0.1'
+});
+server.use(restify.acceptParser(server.acceptable));
+server.use(restify.queryParser());
+server.use(restify.bodyParser());
+
+server.get('/actionsByEntity', function (req, res, next) {
+    res.send(req.params);
+    return next();
+});
+
+server.listen(port, function () {
+    console.log('%s listening at %s', server.name, server.url);
+});

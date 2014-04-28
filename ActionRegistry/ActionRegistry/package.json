@@ -1,10 +1,14 @@
 {
-  "name": "ActionRegistry",
-  "version": "0.0.0",
-  "description": "ActionRegistry",
-  "main": "server.js",
-  "author": {
-    "name": "savasp",
-    "email": ""
-  }
+    "name": "actionregistry",
+    "description": "Schema.org action registry",
+    "version": "0.0.1",
+    "keywords": ["registry", "action", "schema.org", "schema"],
+    "dependencies": {
+        "restify": ">= 2.7.0"
+    },
+    "author": "Schema.org",
+    "main": "index.js",
+    "engines": {
+        "node": ">= 0.10"
+    }
 }
