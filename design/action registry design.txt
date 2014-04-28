@@ -11,7 +11,7 @@ return
 	Share: [{}, {}]
 }
 
-http://actionregistry.com/getActionsByEntity?fb_url="/pages/Seattle-Washington/110843418940484"
+http://actionregistry.com/getActionsByEntity?fb_url=/pages/Seattle-Washington/110843418940484
 
 
 return 
@@ -26,7 +26,7 @@ return
 
 
 
-http://actionregistry.com/getActionDetails?actionType="BookFlight"
+http://actionregistry.com/getActionDetails?actionType=BookFlight
 
 {
 }
