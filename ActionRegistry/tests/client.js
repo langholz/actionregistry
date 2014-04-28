@@ -10,10 +10,20 @@ var client = restify.createJsonClient({
     version: '~0.0.1'
 });
 
-client.get('/getActionsByEntity?fb_url=/ea', function (err, req, res, obj) {
+var cases = {
+  "/getActionsByEntity?fb_url=\"/pages/Seattle-Washington/110843418940484\"": {
+    'foo': 'bar',
+  }
+};
+
+for (var uri in cases) {
+  var expected = cases[uri];
+  client.get(uri, function(err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
-});
+    assert.deepEqual(res.body, expected);
+  });
+}
 
 client.get('/getActionDetails?actionType=type', function (err, req, res, obj) {
     assert.ifError(err);
