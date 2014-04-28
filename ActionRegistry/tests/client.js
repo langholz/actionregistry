@@ -11,8 +11,19 @@ var client = restify.createJsonClient({
 });
 
 var cases = {
-  "/getActionsByEntity?fb_url=\"/pages/Seattle-Washington/110843418940484\"": {
-    'foo': 'bar',
+  "/getActionsByEntity?fb_url=/pages/Seattle-Washington/110843418940484": {
+	  BookFlight: {
+		  "Kayak": {
+        target: "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%"
+      },
+		  "Expedia": {target: ""}
+	  },
+	  GetDirections: {
+		  "GoogleMaps": {
+        target: "https://maps.google.com/maps?daddr=%daddr%&saddr=%saddr%"
+      },
+		  "BingMaps": {target: ""}
+	  }
   }
 };
 
