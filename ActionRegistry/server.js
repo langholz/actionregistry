@@ -1,5 +1,7 @@
 ﻿var restify = require('restify');
 var debug = require('debug')('server');
+var actionsByEntity = require('./actionsByEntity.js');
+var actionDetails = require('./actionDetails.js');
 var port = process.env.port || 1337;
 var server = restify.createServer({
     name: 'actionregistry',
@@ -18,7 +20,12 @@ function isValidActionsByEntityQuery(parameters) {
 
 server.get('/getActionsByEntity', function (req, res, next) {
     if (isValidActionsByEntityQuery(req.params)) {
-        res.send(req.params);
+        var fb_url = req.params['fb_url'].trim().toLowerCase();
+        if (actionsByEntity.has(fb_url)) {
+            res.send(actionsByEntity.get(fb_url));
+        } else {
+            res.send(404);
+        }
     } else {
         res.send(400);
     }
@@ -35,7 +42,12 @@ function isValidActionDetailsQuery(parameters) {
 
 server.get('/getActionDetails', function (req, res, next) {
     if (isValidActionDetailsQuery(req.params)) {
-        res.send(req.params);
+        var actionType = req.params['actionType'].trim().toLowerCase();
+        if (actionDetails.has(actionType)) {
+            res.send(actionDetails.get(actionType));
+        } else {
+            res.send(404);
+        }
     } else {
         res.send(400);
     }
