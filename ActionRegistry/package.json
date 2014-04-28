@@ -2,6 +2,10 @@
     "name": "actionregistry",
     "description": "Schema.org action registry",
     "version": "0.0.1",
+    "subdomain": "actionregistry",
+    "scripts": {
+        "start": "node server.js"
+    },
     "keywords": ["registry", "action", "schema.org", "schema"],
     "dependencies": {
         "restify": ">= 2.7.0",
@@ -9,7 +13,6 @@
         "debug": "*"
     },
     "author": "Schema.org",
-    "main": "index.js",
     "engines": {
         "node": ">= 0.10"
     }
