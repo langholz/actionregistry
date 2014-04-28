@@ -1,0 +1,12 @@
+{
+  "/bookFlight": [
+    {
+      "provider": "kayak",
+      "uri": "http://kayak.com/book?entityid=k1234",
+    },
+    {
+      "provider": "expedia",
+      "uri": "http://expedia.co.uk/book?entityid=x6543",
+    },
+  ],
+}
