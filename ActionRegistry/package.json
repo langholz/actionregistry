@@ -4,7 +4,8 @@
     "version": "0.0.1",
     "keywords": ["registry", "action", "schema.org", "schema"],
     "dependencies": {
-        "restify": ">= 2.7.0"
+        "restify": ">= 2.7.0",
+        "debug": "*"
     },
     "author": "Schema.org",
     "main": "index.js",
