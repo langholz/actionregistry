@@ -1,4 +1,4 @@
-http://actionregistry.com/getActionbyEntity?fb_url="/TheWestinSeattleHotel"
+http://actionregistry.com/getActionsByEntity?fb_url="/TheWestinSeattleHotel"
 
 return
 
@@ -11,7 +11,7 @@ return
 	Share: [{}, {}]
 }
 
-http://actionregistry.com/getActionbyEntity?fb_url="/pages/Seattle-Washington/110843418940484"
+http://actionregistry.com/getActionsByEntity?fb_url="/pages/Seattle-Washington/110843418940484"
 
 
 return 
