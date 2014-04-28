@@ -1,0 +1,10 @@
+{
+  "name": "ActionRegistry",
+  "version": "0.0.0",
+  "description": "ActionRegistry",
+  "main": "server.js",
+  "author": {
+    "name": "savasp",
+    "email": ""
+  }
+}
