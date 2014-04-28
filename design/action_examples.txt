@@ -1,0 +1,9 @@
+Booking a hotel:
+
+http://www.expedia.com/London-Hotels-Millennium-Gloucester-Hotel-London-Kensington.h523228.Hotel-Information?chkin=05%2F09%2F2014&chkout=05%2F10%2F2014&rm1=a2
+http://www.expedia.com/Seattle-Hotels-Warwick-Seattle-Hotel.h6839.Hotel-Information?chkin=05%2F09%2F2014&chkout=05%2F10%2F2014&rm1=a2
+http://www.expedia.com/Seattle-Hotels-Red-Lion-Hotel-On-Fifth-Avenue.h50947.Hotel-Information?chkin=05%2F09%2F2014&chkout=05%2F10%2F2014&rm1=a2
+
+Hotel ratings:
+
+https://api.eancdn.com/ean-services/rs/hotel/v3/info?cid=55505&minorRev=99&apiKey=cbrzfta369qwyrm9t5b8y8kf&locale=en_US&currencyCode=USD&xml=<HotelInformationRequest><hotelId>122212</hotelId><options>HOTEL_SUMMARY</options></HotelInformationRequest>
