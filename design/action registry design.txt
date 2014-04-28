@@ -1,0 +1,48 @@
+http://actionregistry.com/getActionbyEntity?fb_url="/TheWestinSeattleHotel"
+
+return
+
+{
+	BookHotel: [{}, {}],
+	GetHotelReview: [{}, {}],
+	PostHotelReview: [{}, {}],
+	GetDirection: [{}, {}],
+	Like: [{}, {}],
+	Share: [{}, {}]
+}
+
+http://actionregistry.com/getActionbyEntity?fb_url="/pages/Seattle-Washington/110843418940484"
+
+
+return 
+
+{
+	BookFlight: [{}, {}],
+	BookHotel: [{}, {}],
+	GetDirections: [{}, {}],
+	Like: [{}],
+	Share: [{}, {}]
+}
+
+
+
+http://actionregistry.com/getActionDetails?actionType="BookFlight"
+
+{
+}
+
+
+
+
+canonical examples
+
+
+https://www.facebook.com/pages/Seattle-Washington/110843418940484
+https://www.facebook.com/TheWestinSeattleHotel
+
+
+
+
+
+
+
