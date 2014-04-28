@@ -8,8 +8,16 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
+function isValidActionsByEntityQuery(parameters) {
+    var valid = typeof  parameters ;
+    if (typeof parameters !== "undefined") {
+
+    }
+}
+
 server.get('/actionsByEntity', function (req, res, next) {
     res.send(req.params);
+
     return next();
 });
 
