@@ -12,14 +12,18 @@ var client = restify.createJsonClient({
 
 var cases = {
   "/getActionsByEntity?fb_url=\"/pages/Seattle-Washington/110843418940484\"": {
-
+    'foo': 'bar',
   }
 };
 
-client.get('/getActionsByEntity', function (err, req, res, obj) {
+for (var uri in cases) {
+  var expected = cases[uri];
+  client.get(uri, function(err, req, res, obj) {
     assert.ifError(err);
     debug('Server returned: %j', obj);
-});
+    assert.deepEqual(res.body, expected);
+  });
+}
 
 client.get('/getActionDetails?actionType=type', function (err, req, res, obj) {
     assert.ifError(err);
