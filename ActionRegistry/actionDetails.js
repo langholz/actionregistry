@@ -1,5 +1,4 @@
-var dict = require('dict');
-var actionDetails = dict({
+var actionDetails = {
     "bookflight": {
         "friendlyName": "Book a Flight",
         "providers": [
@@ -36,6 +35,6 @@ var actionDetails = dict({
             }
         ]
     }
-});
+};
 
 module.exports = actionDetails;

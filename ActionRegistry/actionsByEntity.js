@@ -1,5 +1,4 @@
-var dict = require('dict');
-var actionsByEntity = dict({
+var actionsByEntity = {
     "http://facebook.com/thewestinseattlehotel": {
         BookHotel: [
             {},
@@ -49,6 +48,6 @@ var actionsByEntity = dict({
         }
       }
     }
-});
+};
 
 module.exports = actionsByEntity;

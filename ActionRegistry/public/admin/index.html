@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Action Registry Admin</title>
+    <script src="http://rawgit.com/visionmedia/superagent/master/superagent.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    function reset() {
+        superagent
+        .post('/reset')
+        .end(function (res) {
+            if (!res.ok) {
+                throw new Error('Invalid response to /reset. status: ' + res.status);
+            }
+        });
+    }
+</script>
+<button type="button" onclick="reset();">Reset</button>
+
+</body>
+</html>

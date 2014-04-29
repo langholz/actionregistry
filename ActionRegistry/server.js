@@ -1,7 +1,11 @@
 ﻿var restify = require('restify');
 var debug = require('debug')('server');
-var actionsByEntity = require('./actionsByEntity.js');
-var actionDetails = require('./actionDetails.js');
+var dict = require('dict');
+var deepCopy = require('deep-copy');
+var defaultActionsByEntity = require('./actionsByEntity.js');
+var defaultActionDetails = require('./actionDetails.js');
+var actionsByEntityRuntime = null;
+var actionDetailsRuntime = null;
 var port = process.env.port || 1337;
 var server = restify.createServer({
     name: 'actionregistry',
@@ -10,6 +14,16 @@ var server = restify.createServer({
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
+
+server.get(/\/admin\/?.*/, restify.serveStatic({
+    directory: './public',
+    default: 'index.html'
+}));
+
+function reset() {
+    actionsByEntityRuntime = dict(deepCopy(defaultActionsByEntity));
+    actionDetailsRuntime = dict(deepCopy(defaultActionDetails));
+}
 
 function isValidActionsByEntityQuery(parameters) {
     var valid = typeof parameters !== 'undefined'
@@ -21,8 +35,9 @@ function isValidActionsByEntityQuery(parameters) {
 server.get('/getActionsByEntity', function (req, res, next) {
     if (isValidActionsByEntityQuery(req.params)) {
         var url = req.params['url'].trim().toLowerCase();
-        if (actionsByEntity.has(url)) {
-            res.send(actionsByEntity.get(url));
+        if (actionsByEntityRuntime.has(url)) {
+            res.send(actionsByEntityRuntime.get(url));
+            actionsByEntityRuntime.clear();
         } else {
             res.send(404);
         }
@@ -43,8 +58,9 @@ function isValidActionDetailsQuery(parameters) {
 server.get('/getActionDetails', function (req, res, next) {
     if (isValidActionDetailsQuery(req.params)) {
         var actionType = req.params['actionType'].trim().toLowerCase();
-        if (actionDetails.has(actionType)) {
-            res.send(actionDetails.get(actionType));
+        if (actionDetailsRuntime.has(actionType)) {
+            res.send(actionDetailsRuntime.get(actionType));
+            actionDetailsRuntime.clear();
         } else {
             res.send(404);
         }
@@ -55,6 +71,14 @@ server.get('/getActionDetails', function (req, res, next) {
     return next();
 });
 
+
+server.post('/reset', function (req, res, next) {
+    reset();
+    res.send(200);
+    return next();
+});
+
 server.listen(port, function () {
     debug('%s listening at %s', server.name, server.url);
+    reset();
 });
