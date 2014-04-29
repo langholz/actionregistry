@@ -27,9 +27,6 @@ var actionDetails = {
                     {"daddr": {"friendlyName": "Destination Address"}},
                     {"saddr": {"friendlyName": "Starting Address"}}
                 ]
-            },
-            {
-                "friendlyName": "Bing Maps"
             }
         ]
     },
