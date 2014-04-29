@@ -13,19 +13,22 @@ return
 
 http://actionregistry.com/getActionsByEntity?fb_url=http://facebook.com/pages/Seattle-Washington/110843418940484
 
-return 
+return
 
 {
-	BookFlight: { 
+	BookFlight: {
 		"Kayak": {target: "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%"},
 		"Expedia": {target: ""}
 	}
-	GetDirections: { 
+	GetDirections: {
 		"GoogleMaps": {target: "https://maps.google.com/maps?daddr=%daddr%&saddr=%saddr%"},
 		"BingMaps": {target: ""}
 	}
-		
-	BookHotel: {},
+
+	BookHotel: {
+    "Expedia": {target:
+    "http://www.expedia.com/Seattle-Hotels-The-Westin-Seattle.h16673.Hotel-Information"}
+  },
 	Like: {},
 	Share: {}
 }
@@ -85,4 +88,3 @@ Mapping Cities to Airports
 Seattle - SEA
 San Francisco - SFO
 Vancouver, BC - YVR
-
