@@ -4,7 +4,8 @@ var actionDetails = {
         "providers": [
             {
                 "Kayak": {
-                    "target": "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%",
+                    // http://www.kayak.com/flights/SFO-SEA/2014-04-30/2014-05-22
+                    "target": "http://www.kayak.com/flights/%origin%-%destination%/%depart/%return%",
                     "friendlyName": "Kayak",
                     "params": [
                         {"origin": {"friendlyName": "Origin" }},
@@ -13,9 +14,6 @@ var actionDetails = {
                         {"return":{ "friendlyName": "Return Date" }}
                     ]
                 }
-            },
-            {
-                "Expedia": { "friendlyName": "Expedia" }
             }
         ]
     },
@@ -37,10 +35,10 @@ var actionDetails = {
             }
         ]
     },
-    "GetHotelReview": {},
-    "PostHotelReview": {},
-    "Like": {},
-    "Share": {}
+    "gethotelreview": {},
+    "posthotelreview": {},
+    "like": {},
+    "share": {}
 };
 
 module.exports = actionDetails;

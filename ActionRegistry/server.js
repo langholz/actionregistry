@@ -88,8 +88,22 @@ server.post('/action', function (req, res, next) {
     return next();
 });
 
-server.post('/entity', function (req, res, next) {
-    res.send(200);
+server.post('/provider', function (req, res, next) {
+    var actionType = req.body.action.toLowerCase();
+    if (actionDetailsRuntime.has(actionType)) {
+        var action = actionDetailsRuntime.get(actionType);
+        action.providers.push(req.body.provider);
+        res.send(200);
+    } else {
+        actionDetailsRuntime.set(
+            actionType,
+            {
+                "friendlyName": req.body.friendlyName,
+                "providers": [req.body.provider]
+            });
+        res.send(200);
+    }
+
     return next();
 });
 

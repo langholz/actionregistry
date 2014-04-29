@@ -20,16 +20,18 @@
         superagent
         .post('/provider')
         .send({
-            "action": "",
-            "Expedia": {
-                "target": "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%",
-                "friendlyName": "Expedia",
-                "params": [
-                    {"origin": {"friendlyName": "Origin" }},
-                    {"destination": {"friendlyName": "Destination" }},
-                    {"depart":{ "friendlyName": "Depart Date" }},
-                    {"return":{ "friendlyName": "Return Date" }}
-                ]
+            "action": "bookflight",
+            "friendlyName": "Book a Flight",
+            "provider": {
+                "Expedia": {
+                    // http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:SEA,to:SFO&leg2=from:SFO,to:SEA&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search
+                    "target": "http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:%origin%,to:%destination%&leg2=from:%destination%,to:%origin%&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search",
+                    "friendlyName": "Expedia",
+                    "params": [
+                        {"origin": {"friendlyName": "Origin" }},
+                        {"destination": {"friendlyName": "Destination" }}
+                    ]
+                }
             }
         })
         .end(function (res) {
@@ -42,7 +44,10 @@
     function addAction() {
         superagent
         .post('/action')
-        .send({ name: 'Manny', species: 'cat' })
+        .send({
+            name: 'Manny',
+            species: 'cat'
+        })
         .end(function (res) {
             if (!res.ok) {
                 throw new Error('Invalid response to /action. status: ' + res.status);

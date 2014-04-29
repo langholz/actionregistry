@@ -19,6 +19,11 @@ var actionsByEntity = {
         "BookFlight",
         "GetDirections",
         "BookHotel"
+    ],
+    "https://www.facebook.com/pages/seattle-washington/110843418940484": [
+        "BookFlight",
+        "GetDirections",
+        "BookHotel"
     ]
 };
 
