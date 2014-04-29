@@ -12,3 +12,6 @@ Hotel reviews:
 http://www.tripadvisor.com/Hotel_Review-g154943-d182528-Reviews-Hyatt_Regency_Vancouver-Vancouver_British_Columbia.html
 
 
+Book a Flight:
+
+http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:SEA,to:SFO&leg2=from:SFO,to:SEA&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search
