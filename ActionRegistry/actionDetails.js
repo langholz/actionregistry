@@ -1,6 +1,7 @@
 var actionDetails = {
     "bookflight": {
         "friendlyName": "Book a Flight",
+        "preposition": "on",
         "providers": [
             {
                 "Kayak": {
@@ -19,6 +20,7 @@ var actionDetails = {
     },
     "getdirections": {
         "friendlyName": "Get Directions",
+        "preposition": "from",
         "providers": [
             {
                 "GoogleMaps": {
@@ -37,6 +39,7 @@ var actionDetails = {
     },
     "bookhotel": {
         "friendlyName": "Book Hotel",
+        "presposition": "on",
         "providers": [
             {
                 "Kayak": {
@@ -54,6 +57,7 @@ var actionDetails = {
     },
     "gethotelreview": {
         "friendlyName": "Get Hotel Review",
+        "preposition": "from",
         "providers": [
             {
                 "TripAdvisor": {
@@ -68,10 +72,7 @@ var actionDetails = {
                 }
             }
         ]
-    },
-    "posthotelreview": {},
-    "like": {},
-    "share": {}
+    }
 };
 
 module.exports = actionDetails;
