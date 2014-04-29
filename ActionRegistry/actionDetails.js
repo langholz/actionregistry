@@ -5,7 +5,7 @@ var actionDetails = {
         "providers": [
             {
                 // http://www.kayak.com/flights/SFO-SEA/2014-04-30/2014-05-22
-                "target": "http://www.kayak.com/flights/%origin%-%destination%/%depart/%return%",
+                "target": "http://www.kayak.com/flights/%origin%-%destination%/%depart%/%return%",
                 "friendlyName": "Kayak",
                 "params": [
                     {"origin": {"friendlyName": "Origin" }},
