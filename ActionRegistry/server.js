@@ -2,15 +2,21 @@
 var debug = require('debug')('server');
 var dict = require('dict');
 var deepCopy = require('deep-copy');
+var http = require('http');
 var defaultActionsByEntity = require('./actionsByEntity.js');
 var defaultActionDetails = require('./actionDetails.js');
+var defaultActionsByType = require('./actionsByOGType.js');
+var pageInfo = require('./pageInfo.js')
+
 var actionsByEntityRuntime = null;
 var actionDetailsRuntime = null;
+
 var port = process.env.port || 1337;
 var server = restify.createServer({
     name: 'actionregistry',
     version: '0.0.1'
 });
+
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
@@ -54,6 +60,26 @@ server.get('/getActionsByEntity', function (req, res, next) {
 
     return next();
 });
+
+    // Reads the given page and tries to extract the open graph or schema.org type.
+    // It then uses the type to return actions
+server.get('/getActionsByNewEntity', function (req, res, next) {
+    if (isValidActionsByEntityQuery(req.params)) {
+        var url = req.params['url'].trim().toLowerCase();
+        pageInfo.getType(url, getActionsByNewEntityResponse(res, next));
+    } else {
+        res.send(400);
+        return next();
+    }
+});
+
+function getActionsByNewEntityResponse(res, next) {
+    return function (type) {
+        var response = { "actions": defaultActionsByType[type.toLowerCase()] };
+        res.send(response);
+        return next();
+    };
+}
 
 function isValidActionDetailsQuery(parameters) {
     var valid = typeof parameters !== 'undefined'
