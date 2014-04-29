@@ -35,7 +35,7 @@ var actionDetails = {
     },
     "bookhotel": {
         "friendlyName": "Book Hotel",
-        "presposition": "on",
+        "preposition": "on",
         "providers": [
             {
                 "target": "http://www.kayak.com/Seattle-Hotels-Four-Seasons-Hotel-Seattle.204154.ksp",
