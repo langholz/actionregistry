@@ -16,10 +16,22 @@
         });
     }
 
-    function addAction() {
+    function addProvider() {
         superagent
-        .post('/action')
-        .send({ name: 'Manny', species: 'cat' })
+        .post('/provider')
+        .send({
+            "action": "",
+            "Expedia": {
+                "target": "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%",
+                "friendlyName": "Expedia",
+                "params": [
+                    {"origin": {"friendlyName": "Origin" }},
+                    {"destination": {"friendlyName": "Destination" }},
+                    {"depart":{ "friendlyName": "Depart Date" }},
+                    {"return":{ "friendlyName": "Return Date" }}
+                ]
+            }
+        })
         .end(function (res) {
             if (!res.ok) {
                 throw new Error('Invalid response to /action. status: ' + res.status);
@@ -27,9 +39,9 @@
         });
     }
 
-    function addEntity() {
+    function addAction() {
         superagent
-        .post('/entity')
+        .post('/action')
         .send({ name: 'Manny', species: 'cat' })
         .end(function (res) {
             if (!res.ok) {
@@ -43,17 +55,17 @@
 <br>
 <br>
 <textarea rows="10" cols="50" style="resize: none;">
-    Some action to add
+    Some PROVIDER to add
 </textarea>
 <br>
-<button type="button" onclick="addAction();">Add Action</button>
+<button type="button" onclick="addProvider();">Add Provider</button>
 <br>
 <br>
 <br>
 <textarea rows="10" cols="50" style="resize: none;">
-    Some entity to add
+    Some ACTION to add
 </textarea>
 <br>
-<button type="button" onclick="addEntity();">Add Provider</button>
+<button type="button" onclick="addAction();">Add Action</button>
 </body>
 </html>
