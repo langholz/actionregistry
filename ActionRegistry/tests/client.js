@@ -11,7 +11,7 @@ var client = restify.createJsonClient({
 });
 
 var cases = {
-  "/getActionsByEntity?url=/pages/Seattle-Washington/110843418940484": {
+  "/getActionsByEntity?url=http://facebook.com/pages/seattle-washington/110843418940484": {
       BookFlight: {
           Kayak: {
         target: "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%"

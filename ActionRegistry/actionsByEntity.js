@@ -1,6 +1,6 @@
 var dict = require('dict');
 var actionsByEntity = dict({
-    "/thewestinseattlehotel": {
+    "http://facebook.com/thewestinseattlehotel": {
         BookHotel: [
             {},
             {}
@@ -26,23 +26,23 @@ var actionsByEntity = dict({
             {}
         ]
     },
-    "/pages/seattle-washington/110843418940484": {
-	    BookFlight: {
-		    Kayak: {
+    "http://facebook.com/pages/seattle-washington/110843418940484": {
+        BookFlight: {
+            Kayak: {
           target: "http://www.kayak.com/flights/%origin%-%daddr%/%depart/%return%"
         },
-		    Expedia: {
+            Expedia: {
           target: ""
         }
-	    },
-	    GetDirections: {
-		    GoogleMaps: {
+        },
+        GetDirections: {
+            GoogleMaps: {
           target: "https://maps.google.com/maps?daddr=%daddr%&saddr=%saddr%"
         },
-		    BingMaps: {
+            BingMaps: {
           target: ""
         }
-	    },
+        },
       BookHotel: {
         Expedia: {
           target: "http://www.expedia.com/Seattle-Hotels-The-Westin-Seattle.h16673.Hotel-Information"
