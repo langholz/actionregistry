@@ -40,6 +40,7 @@
     }
 
     function addAction() {
+        // For yammer
         superagent
         .post('/action')
         .send({
@@ -51,10 +52,12 @@
                 throw new Error('Invalid response to /action. status: ' + res.status);
             }
         });
+
+        // For facebook
         superagent
         .post('/action')
         .send({
-            entityUrl: 'http://www.facebook.com/fourseasonshotelseattle',
+            entityUrl: 'https://www.idowakrat.dev041.lla1.facebook.com/fourseasonshotelseattle',
             action: 'gethotelreview'
         })
         .end(function (res) {
