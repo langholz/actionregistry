@@ -23,15 +23,13 @@
             "action": "bookflight",
             "friendlyName": "Book a Flight",
             "provider": {
-                "Expedia": {
-                    // http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:SEA,to:SFO&leg2=from:SFO,to:SEA&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search
-                    "target": "http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:%origin%,to:%destination%&leg2=from:%destination%,to:%origin%&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search",
-                    "friendlyName": "Expedia",
-                    "params": [
-                        {"origin": {"friendlyName": "Origin" }},
-                        {"destination": {"friendlyName": "Destination" }}
-                    ]
-                }
+                // http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:SEA,to:SFO&leg2=from:SFO,to:SEA&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search
+                "target": "http://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:%origin%,to:%destination%&leg2=from:%destination%,to:%origin%&passengers=children:0,adults:1,seniors:0,infantinlap:Y&mode=search",
+                "friendlyName": "Expedia",
+                "params": [
+                    {"origin": {"friendlyName": "Origin" }},
+                    {"destination": {"friendlyName": "Destination" }}
+                ]
             }
         })
         .end(function (res) {
