@@ -84,7 +84,17 @@ server.post('/reset', function (req, res, next) {
 });
 
 server.post('/action', function (req, res, next) {
-    res.send(200);
+    var url = req.body.entityUrl.toLowerCase();
+    var actionType = req.body.action.toLowerCase();
+    if (actionsByEntityRuntime.has(url)) {
+        var entity = actionsByEntityRuntime.get(url);
+        entity.push(actionType);
+        res.send(200);
+    } else {
+        actionsByEntityRuntime.set(url, [actionType]);
+        res.send(200);
+    }
+
     return next();
 });
 

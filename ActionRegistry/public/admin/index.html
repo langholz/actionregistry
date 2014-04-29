@@ -45,8 +45,8 @@
         superagent
         .post('/action')
         .send({
-            name: 'Manny',
-            species: 'cat'
+            entityUrl: 'https://www.facebook.com/fourseasonshotelseattle',
+            action: 'gethotelreview'
         })
         .end(function (res) {
             if (!res.ok) {
