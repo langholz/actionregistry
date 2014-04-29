@@ -10,6 +10,8 @@ https://api.eancdn.com/ean-services/rs/hotel/v3/info?cid=55505&minorRev=99&apiKe
 Hotel reviews:
 
 http://www.tripadvisor.com/Hotel_Review-g154943-d182528-Reviews-Hyatt_Regency_Vancouver-Vancouver_British_Columbia.html
+http://www.tripadvisor.com/Hotel_Review-g60878-d1152288-Reviews-Four_Seasons_Hotel_Seattle-Seattle_Washington.html
+
 
 
 Book a Flight:
