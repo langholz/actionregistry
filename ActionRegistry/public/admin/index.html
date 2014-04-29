@@ -53,6 +53,17 @@
                 throw new Error('Invalid response to /action. status: ' + res.status);
             }
         });
+        superagent
+        .post('/action')
+        .send({
+            entityUrl: 'http://www.facebook.com/fourseasonshotelseattle',
+            action: 'gethotelreview'
+        })
+        .end(function (res) {
+            if (!res.ok) {
+                throw new Error('Invalid response to /action. status: ' + res.status);
+            }
+        });
     }
 </script>
 <button type="button" onclick="reset();">Reset</button>

@@ -12,6 +12,14 @@ var actionsByEntity = {
         "like",
         "share"
     ],
+    "http://www.facebook.com/fourseasonshotelseattle": [
+        "bookflight",
+        "bookhotel",
+        "posthotelreview",
+        "getdirections",
+        "like",
+        "share"
+    ],
     "http://facebook.com/pages/seattle-washington/110843418940484": [
         "bookflight",
         "getdirections",
