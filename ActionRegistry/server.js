@@ -69,7 +69,6 @@ server.get('/getActionDetails', function (req, res, next) {
     return next();
 });
 
-
 server.post('/reset', function (req, res, next) {
     reset();
     res.send(200);
