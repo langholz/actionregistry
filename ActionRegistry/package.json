@@ -1,28 +1,28 @@
 {
-  "name": "actionregistry",
-  "description": "Schema.org action registry",
-  "version": "0.0.1-7",
-  "subdomain": "actionregistry",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "keywords": [
-    "registry",
-    "action",
-    "schema.org",
-    "schema"
-  ],
-  "dependencies": {
-    "restify": ">= 2.7.0",
-    "dict": ">= 1.4.0",
-    "debug": ">= 0.8.1",
-    "deep-copy": ">= 1.0.0",
-    "jquery": "~2.1.0",
-    "cheerio": "~0.15.0",
-    "superagent": "~0.17.0"
-  },
-  "author": "Schema.org",
-  "engines": {
-    "node": ">= 0.10"
-  }
+    "name": "actionregistry",
+    "description": "Schema.org action registry",
+    "version": "0.0.1-21",
+    "subdomain": "actionregistry",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "keywords": [
+        "registry",
+        "action",
+        "schema.org",
+        "schema"
+    ],
+    "dependencies": {
+        "restify": ">= 2.7.0",
+        "dict": ">= 1.4.0",
+        "debug": ">= 0.8.1",
+        "deep-copy": ">= 1.0.0",
+        "jquery": "~2.1.0",
+        "cheerio": "~0.15.0",
+        "superagent": "~0.17.0"
+    },
+    "author": "Schema.org",
+    "engines": {
+        "node": ">= 0.10"
+    }
 }

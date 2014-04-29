@@ -1,16 +1,34 @@
 var actionsByEntity = {
     "http://facebook.com/thewestinseattlehotel": [
-        "BookHotel",
-        "GetHotelReview",
-        "PostHotelReview",
-        "GetDirections",
-        "Like",
-        "Share"
+        "getdirections",
+        "like",
+        "share"
+    ],
+    "https://www.facebook.com/fourseasonshotelseattle": [
+        "bookflight",
+        "bookhotel",
+        "posthotelreview",
+        "getdirections",
+        "like",
+        "share"
+    ],
+    "https://www.idowakrat.dev041.lla1.facebook.com/fourseasonshotelseattle": [
+        "bookflight",
+        "bookhotel",
+        "posthotelreview",
+        "getdirections",
+        "like",
+        "share"
     ],
     "http://facebook.com/pages/seattle-washington/110843418940484": [
-        "BookFlight",
-        "GetDirections",
-        "BookHotel"
+        "bookflight",
+        "getdirections",
+        "bookhotel"
+    ],
+    "https://www.facebook.com/pages/seattle-washington/110843418940484": [
+        "bookflight",
+        "getdirections",
+        "bookhotel"
     ]
 };
 
