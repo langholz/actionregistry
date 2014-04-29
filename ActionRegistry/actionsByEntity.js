@@ -3,7 +3,7 @@ var actionsByEntity = {
         "BookHotel",
         "GetHotelReview",
         "PostHotelReview",
-        "GetDirection",
+        "GetDirections",
         "Like",
         "Share"
     ],

@@ -36,7 +36,11 @@ var actionDetails = {
                 "BingMaps": {"friendlyName": "Bing Maps" }
             }
         ]
-    }
+    },
+    "GetHotelReview": {},
+    "PostHotelReview": {},
+    "Like": {},
+    "Share": {}
 };
 
 module.exports = actionDetails;
