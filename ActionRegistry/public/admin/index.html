@@ -15,7 +15,45 @@
             }
         });
     }
+
+    function addAction() {
+        superagent
+        .post('/action')
+        .send({ name: 'Manny', species: 'cat' })
+        .end(function (res) {
+            if (!res.ok) {
+                throw new Error('Invalid response to /action. status: ' + res.status);
+            }
+        });
+    }
+
+    function addEntity() {
+        superagent
+        .post('/entity')
+        .send({ name: 'Manny', species: 'cat' })
+        .end(function (res) {
+            if (!res.ok) {
+                throw new Error('Invalid response to /action. status: ' + res.status);
+            }
+        });
+    }
 </script>
 <button type="button" onclick="reset();">Reset</button>
+<br>
+<br>
+<br>
+<textarea rows="10" cols="50" style="resize: none;">
+    Some action to add
+</textarea>
+<br>
+<button type="button" onclick="addAction();">Add Action</button>
+<br>
+<br>
+<br>
+<textarea rows="10" cols="50" style="resize: none;">
+    Some entity to add
+</textarea>
+<br>
+<button type="button" onclick="addEntity();">Add Provider</button>
 </body>
 </html>

@@ -83,6 +83,16 @@ server.post('/reset', function (req, res, next) {
     return next();
 });
 
+server.post('/action', function (req, res, next) {
+    res.send(200);
+    return next();
+});
+
+server.post('/entity', function (req, res, next) {
+    res.send(200);
+    return next();
+});
+
 server.listen(port, function () {
     debug('%s listening at %s', server.name, server.url);
     reset();
