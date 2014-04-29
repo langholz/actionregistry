@@ -39,7 +39,10 @@ server.get('/getActionsByEntity', function (req, res, next) {
             var response = { "actions": [] };
             var actions = actionsByEntityRuntime.get(url);
             for (var i = 0; i < actions.length; i++) {
-                response.actions.push(actionDetailsRuntime.get(actions[i].toLowerCase()))
+                var action = actions[i].toLowerCase();
+                if (actionDetailsRuntime.has(action)) {
+                    response.actions.push(actionDetailsRuntime.get(action));
+                }
             }
             res.send(response);
         } else {
