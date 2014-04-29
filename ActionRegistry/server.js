@@ -36,7 +36,12 @@ server.get('/getActionsByEntity', function (req, res, next) {
     if (isValidActionsByEntityQuery(req.params)) {
         var url = req.params['url'].trim().toLowerCase();
         if (actionsByEntityRuntime.has(url)) {
-            res.send(actionsByEntityRuntime.get(url));
+            var response = { "actions": [] };
+            var actions = actionsByEntityRuntime.get(url);
+            for (var i = 0; i < actions.length; i++) {
+                response.actions.push(actionDetailsRuntime.get(actions[i].toLowerCase()))
+            }
+            res.send(response);
         } else {
             res.send(404);
         }
