@@ -13,16 +13,16 @@ server.use(restify.bodyParser());
 
 function isValidActionsByEntityQuery(parameters) {
     var valid = typeof parameters !== 'undefined'
-        && parameters.hasOwnProperty('fb_url')
-        && typeof parameters['fb_url'] === 'string';
+        && parameters.hasOwnProperty('url')
+        && typeof parameters['url'] === 'string';
     return valid;
 }
 
 server.get('/getActionsByEntity', function (req, res, next) {
     if (isValidActionsByEntityQuery(req.params)) {
-        var fb_url = req.params['fb_url'].trim().toLowerCase();
-        if (actionsByEntity.has(fb_url)) {
-            res.send(actionsByEntity.get(fb_url));
+        var url = req.params['url'].trim().toLowerCase();
+        if (actionsByEntity.has(url)) {
+            res.send(actionsByEntity.get(url));
         } else {
             res.send(404);
         }

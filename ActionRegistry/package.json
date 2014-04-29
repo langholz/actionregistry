@@ -1,16 +1,21 @@
 {
     "name": "actionregistry",
     "description": "Schema.org action registry",
-    "version": "0.0.1",
+    "version": "0.0.1-4",
     "subdomain": "actionregistry",
     "scripts": {
         "start": "node server.js"
     },
-    "keywords": ["registry", "action", "schema.org", "schema"],
+    "keywords": [
+        "registry",
+        "action",
+        "schema.org",
+        "schema"
+    ],
     "dependencies": {
         "restify": ">= 2.7.0",
-        "dict": "*",
-        "debug": "*"
+        "dict": ">= 1.4.0",
+        "debug": ">= 0.8.1"
     },
     "author": "Schema.org",
     "engines": {
