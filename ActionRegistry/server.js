@@ -37,7 +37,6 @@ server.get('/getActionsByEntity', function (req, res, next) {
         var url = req.params['url'].trim().toLowerCase();
         if (actionsByEntityRuntime.has(url)) {
             res.send(actionsByEntityRuntime.get(url));
-            actionsByEntityRuntime.clear();
         } else {
             res.send(404);
         }
@@ -60,7 +59,6 @@ server.get('/getActionDetails', function (req, res, next) {
         var actionType = req.params['actionType'].trim().toLowerCase();
         if (actionDetailsRuntime.has(actionType)) {
             res.send(actionDetailsRuntime.get(actionType));
-            actionDetailsRuntime.clear();
         } else {
             res.send(404);
         }
