@@ -1,5 +1,23 @@
-Warwick Seattle: facebook.com/159601407424384, Seattle-Hotels-Warwick-Seattle-Hotel.h6839.Hotel-Information (expedia), 115123 (EAN)
-Red Lion Seattle: facebook.com/111719115567952, Seattle-Hotels-Red-Lion-Hotel-On-Fifth-Avenue.h50947.Hotel-Information, 125727
+Warwick Seattle:
+	facebook.com/159601407424384
+	Seattle-Hotels-Warwick-Seattle-Hotel.h6839.Hotel-Information (expedia)
+	115123 (EAN)
+	g60878-d100505-Reviews-Warwick_Seattle_Hotel-Seattle_Washington.html (tripadvisor)
 
-Shangri-La Vancouver: https://www.facebook.com/ShangriLaVan, Vancouver-Hotels-Shangri-La-Hotel.h2245179.Hotel-Information, 274734
-Hyatt Vancouver: https://www.facebook.com/HyattRegencyVancouver, Vancouver-Hotels-Hyatt-Regency-Vancouver.h3203.Hotel-Information, 106072
+Red Lion Seattle:
+    facebook.com/111719115567952
+    Seattle-Hotels-Red-Lion-Hotel-On-Fifth-Avenue.h50947.Hotel-Information
+    125727
+    g60878-d275251-Reviews-Red_Lion_Hotel_on_Fifth_Avenue_Seattle-Seattle_Washington.html
+
+Shangri-La Vancouver
+	   https://www.facebook.com/ShangriLaVan
+	   Vancouver-Hotels-Shangri-La-Hotel.h2245179.Hotel-Information
+	   274734
+	   g154943-d1176419-Reviews-Shangri_La_Hotel_Vancouver-Vancouver_British_Columbia.html
+
+Hyatt Vancouver
+      https://www.facebook.com/HyattRegencyVancouver
+      Vancouver-Hotels-Hyatt-Regency-Vancouver.h3203.Hotel-Information
+      106072
+      g154943-d182528-Reviews-Hyatt_Regency_Vancouver-Vancouver_British_Columbia.html
